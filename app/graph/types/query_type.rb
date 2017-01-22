@@ -9,5 +9,13 @@ QueryType = GraphQL::ObjectType.define do
       Artist.find(args[:id])
     }
   end
-  
+
+  field :album do
+  	type AlbumType
+  	argument :name, !types.String
+  	resolve -> (obj, args, ctx){
+  		Album.find_by(name: args[:name])
+  	}
+  end
+
 end
