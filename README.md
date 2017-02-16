@@ -16,3 +16,11 @@ mutation{
   } 
 }
 
+mutation{
+  editArtist(input: {id: "4", name: "test meh"}){
+    artist {
+      name
+    }
+  }
+}
+
